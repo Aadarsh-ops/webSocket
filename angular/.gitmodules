@@ -1,0 +1,3 @@
+[submodule "event-organisers"]
+	path = event-organisers
+	url = https://github.com/Aadarsh-ops/webSocket.git

@@ -1,0 +1,30 @@
+<div style="text-align:center">
+  <h1>welcome to {{title}}</h1>
+  <h1>
+    <input type="text" name="txt" value="Hello" [(ngModel)]="message">
+    <button (click)="sendMessage($event)">send</button>
+  </h1>
+  <!-- <h3>
+    <ul>
+      <li *ngFor="let item of messages">
+        <span>${{item.sender}}</span><span> </span>${{item.text}}
+      </li>
+    </ul>
+  </h3> -->
+  <div class="row">
+    <button class="tab-btn" :class="{ active: activeRoom =='general'} " (click)="activeRoom= 'general'">General</button>
+    <button class="tab-btn" :class="{ active: activeRoom =='typescript'} " (click)="activeRoom= 'typescript'">TypeScript</button>
+    <button class="tab-btn" :class="{ active: activeRoom =='nestJs'} " (click)="activeRoom= 'nestJs'">NestJs</button>
+  </div>
+  <div class="row">
+    Status:{{isMemberOfActiveRoom ? 'Joined' : 'Not Joined' }}<button (click)="toggltRoomMembership()">{{isMemberOfActiveRoom ? 'Leave' : 'Join'}} </button>
+  </div>
+  <h3>
+    <ul>
+      <li *ngFor="let item of messages[activeRoom]">
+        <span> $ {{item.sender}}</span><span> </span>: {{item.text}}
+      </li>
+    </ul>
+  </h3>
+
+</div>
