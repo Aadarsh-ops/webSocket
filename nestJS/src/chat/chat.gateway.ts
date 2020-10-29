@@ -34,23 +34,3 @@ export class ChatGateway implements OnGatewayInit {
   }
 
 }
-
-
-// @WebSocketGateway(8080,{namespace : '/chat'})
-// export class ChatGateway implements OnGatewayInit {
-
-//   @WebSocketServer()
-//   ws: Server
-
-//   private logger: Logger = new Logger('ChatGateway');
-
-//   afterInit(server: Server) {
-//     this.logger.log('Intialized');
-//   }
-
-//   @SubscribeMessage('chatToServer')
-//   handleMessage(client: Socket, message: { sender: string, text: string}) {
-//     // this.ws.emit('chatToClients', message);
-//     return { event: 'chatToClient', data: message};
-//   }
-// }

@@ -9,20 +9,7 @@ import * as express from 'express';
 
 
 async function bootstrap() {
-  // const server = express();
-  // const app = await NestFactory.create<NestExpressApplication>(
-  //   AppModule,
-  //   new ExpressAdapter(server));
-  // await app.init();
-
-  // http.createServer(server).listen(3000);
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
-//   app.useWebSocketAdapter(new IoAdapter());
-//   app.enableCors({
-//     origin: true,
-//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-//     credentials: true,
-// });
   await app.listen(3000);
   console.log(`Application is running on: ${await app.getUrl()}`);
 }
